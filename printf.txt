@@ -1,0 +1,4 @@
+No. 	Subject 	Marks
+1 	Math 		30
+2 	Science 	40.0
+3 	Hindi 		35
