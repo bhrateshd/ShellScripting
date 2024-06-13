@@ -1,5 +1,5 @@
 #!bin/bash
-
+#virsion 2.0
 echo -n "Enter A Number: "
 read -r n
 arm=0
