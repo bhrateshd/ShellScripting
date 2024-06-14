@@ -15,6 +15,8 @@ case $fruit in
     "orange")
         echo "This is an orange fruit."
         ;;
+    "mango") "This is a orange and yello fruit."
+	;;
     *)
         echo "Unknown fruit."
         ;;
