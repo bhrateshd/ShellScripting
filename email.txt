@@ -1,0 +1,5 @@
+To: bhrateshdhangar@gmail.com
+Subject: Test Email from Sendmail
+
+This is a test email sent from Sendmail on a Linux machine.
+
