@@ -19,7 +19,7 @@ case $val in
 	1) echo "Total Memory = $(free -m |awk '/^Mem/ {print $2}')"
 		 echo "Free Memory = $(free -m |awk '/^Mem/ {print $4}')"
 		 ;;
-	 2) echo "Cup Load = $(uptime |awk -F ', ' '{print $NF}' | awk -F 'load average: ' '{print $2}')" ;;
+	 2) echo "Cpu Load = $(uptime |awk -F ', ' '{print $NF}' | awk -F 'load average: ' '{print $2}')" ;;
 	 3) echo "Total Size = $(df -h / |grep -v Filesystem |awk '{print $2}')"
 	    echo "Free  Size = $(df -h / |grep -v Filesystem |awk '{print $4}')"
 	    	;;
