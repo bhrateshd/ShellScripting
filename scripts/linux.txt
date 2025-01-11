@@ -1,0 +1,973 @@
+=========
+Linux OS
+=========
+
+=> Where we will use linux os in real-time
+
+	=> Jenkis Server
+	=> Docker Server
+	=> K8S cluster
+	=> SonarQube server
+	=> Nexus Server
+	=> ELK stack
+	=> Grafana & Promethues servers
+	=> Ansible server
+
+=============
+What is OS ?
+=============
+
+=> It is a software which acts as mediator between user and computer.
+
+=> Users will communicate with computers using OS
+
+=> Without OS we can't use any computer
+
+=> OS provides platform to run our applications in computer.
+
+	Ex: notepad, calculator, browser, tomcat....
+
+=> We have several operating systems in market
+
+	Ex: Windows, Linux, Mac, Android, IOS etc...	
+
+===========
+Windows OS
+===========
+
+=> Developed by Microsoft company (Bill Gates)
+
+=> Windows os is licensed (commercial)
+
+=> Windows is single user based os
+
+=> Security features are less in windows os (anti virus s/w required)
+
+=> Windows is GUI based (graphical user interface)
+
+=> Windows is recommended for personal use
+
+	Ex: watch movies, play games, online classes....
+
+==========
+Linux OS
+==========
+
+=> Linux is community based os (not specific to any company)
+
+=> Linux is free and open source os
+
+=> Linux is Multi User based OS
+
+=> Linux is highly secured (anti virus is not required)
+
+=> Linux is CLI based os (command line interface)
+
+=> Linux is highly recommended for business use (servers management)
+
+	Ex: App Servers, DB servers, jenkins, docker, k8s, nexus....
+
+==============
+Linux History
+==============
+
+=> Linux OS developed by "Linus Torvalds"
+
+-> Linus Torvalds identified some challenges/issues in Unix OS
+
+-> Linus Torvalds identified one OS which is matching with his ideas 
+
+			i.e Minux os	
+
+-> Linus Torvalds used Minux OS code and made some changes and released into market as new OS i.e Linux OS.
+
+		(Li) nus + Mi (nux) = Linux
+
+======================
+Linux Distributions
+======================
+
+-> Linus Torvalds provided Linux OS source code for free of cost
+
+-> So many companies downloaded Linux OS source code and modified according to their requirement and released into market with their brand names
+
+Those are called as Linux Distributions/ Linux Flavours.
+
+-> We have 200+ Linux Distributions in the market.
+
+	Ex: Amazon Linux, Ubuntu, Red HAT, suse, debian, kali, fedora....
+
+=============================
+How to setup Linux Machine ?
+=============================
+
+Approach-1 : Download and Install Linux OS in our System.
+
+Approach-2 : Use Virtual Box and install Linux os as guest os
+
+Approach-3 : Setup Linux VM in AWS Cloud for free of cost
+
+			 (1 year & monthly 750 hours you can use)
+
+======================================================================
+
+👉 *AWS Account Setup* : https://youtu.be/xi-JDeceLeI?si=4MgBX_H4_NPuzdT8
+
+👉 *Linux VM Setup in AWS* : https://www.youtube.com/watch?v=JMlQaTXvw5o
+
+👉 *Connect Linux VM with MobaXterm* : https://youtu.be/uI2iDk8iTps?si=ZuZs0lQTxoRpbRMk
+
+👉 *Connect Linux VM with putty* : https://youtu.be/GXc_bxmP0AA?si=HgSydrP89mPxv23s
+
+=============================================================================
+
+
+================
+Linux Commands
+================
+
+whoami : display logged in username
+
+pwd : display present working directory
+
+date : display today's date
+
+cal : display current month calendar
+
+cal 2025 : display 2025 year calendar
+
+clear : clear the terminal content
+
+mkdir : make directory (create folder)
+
+		mkdir aws
+		mkdir devops
+		mkdir docker
+
+rmdir : remove empty directory (delete)
+
+		rmdir devops
+
+rm -rf <dir> : remove non-empty directory
+
+		rm -rf devops
+
+ls : display present working directory content
+
+ls -l : long list the files in alphabetical order
+
+ls -lr : display files in reverse of alphabetical order
+
+ls -lt : display latest files on top
+
+ls -ltr : display old files on top
+
+ls -la : display hidden files
+
+touch : To create empty files in linux
+
+		touch f1.txt
+		touch f2.txt f3.txt
+
+cd : change directory
+
+		cd dir-name
+
+		cd ..
+
+rm : to delete file
+
+		rm f1.txt
+
+		rm -rf <dir-name>
+
+mv : For rename & move
+
+		mv existing-name  new-name
+
+		mv presention-location new-location
+
+cat : create new file with data + append data to file + print file data
+
+			# create new file with data
+			cat > f1.txt
+
+			# append data to existing file
+			cat >> f1.txt
+
+			# print file data
+			cat f1.txt
+
+			# print file data along with line numbers
+			cat -n f1.txt
+
+tac : To print file data from bottom to top
+
+==============================
+10-July-2024 (Linux Commands)
+==============================
+
+cp : copy file data from one file to another file
+
+		cp f1.txt f2.txt
+
+Note: If we want to copy data from multiple files then we should use cat command
+
+		cat f1.txt f2.txt > f3.txt
+
+
+head : print first 10 lines of the file
+
+		head f1.txt
+
+		head -n 20 f1.txt
+
+		head -n 50 f1.txt
+
+tail : print last 10 lines of the file
+
+		tail f1.txt
+
+		tail -n 25 f1.txt
+
+
+Note: To get latest log message from log file we will use tail command.
+
+
+grep : grep stands for global regular expression print
+
+Note: Using grep command we can search for content in the file
+
+		# print lines which contains teen keyword
+[O		grep 'teen' abc.txt
+
+		# ignore case sentiveness
+		grep -i 'teen' abc.txt
+
+		# print lines contains teen with line number
+		grep -n 'teen' abc.txt
+
+		# print lines which doesn't contain teen keyword
+[I		grep -v 'teen' abc.txt
+
+		# search for teen keyword in all files of pwd
+		grep 'teen' *
+
+		# tail with grep combination
+		# in last 10 lines of file search for 'teen' keyword
+		tail abc.txt | grep 'teen'
+
+
+wc : word count
+
+
+=======================
+Text Editors in Linux
+=======================
+
+=> vi (visual editor) it is default editor in linux machines
+
+=> Using 'vi' we can create new files and we can modify existing file data.
+
+=> vi command is having 3 modes
+
+    1) command mode  (just to open the file)  
+
+    	Ex: vi <filename>
+
+    2) insert mode (to edit the file ) ---> press 'i' in keyboard
+
+    3) esc mode (to comeout from insert mode) --> press 'esc' in keyboard
+
+
+    ## Save changes & close the file =>  :wq
+    
+    ## Without saving changes close the file => :q!
+
+
+Note: vi command will open the file if it is avilable otherwise it will create new file and it will open that file.
+
+========================
+file creation commands
+=======================
+
+touch : to create empty file
+cat  : create file with data
+cp : copy one file data into another file (cp f1.txt f2.txt)
+vi : create and open file for editing (vi f3.txt)
+
+====================
+reading file data 
+===================
+cat : print file data from top to bottom
+tac  : print file data from bottom to top
+head : print first 10 lines of file data
+tail : print last 10 lines of file data
+vi : open the file 
+
+
+###############
+11-July-2024
+###############
+
+=============
+SED Command
+=============
+
+=> SED stands for stream editor
+
+=> SED is used to process the data (substitute, delete, print, insert)
+
+=> Using SED command we can perform operations on the file without opening the file.
+
+=> SED is very powerful command in linux
+
+
+# replace first occurance of linux keyword with unix
+sed 's/linux/unix/' data.txt
+
+# replace second occurance of linux keyword with unix
+sed 's/linux/unix/2' data.txt
+
+# replace 3rd occurance of linux keyword with unix
+sed 's/linux/unix/3' data.txt
+
+# replace all occurances of linux keyword with unix
+sed 's/linux/unix/g' data.txt
+
+# substitute and save changes in original file
+sed -i 's/linux/unix/g' data.txt
+
+# delete first line of the file
+sed -i '1d' data.txt
+
+# delete fourth line of the file
+sed -i '4d' data.txt
+
+#delete last line of the file
+sed -i '$d' data.txt
+
+# delete data from nth line to last line
+sed -i 'n,$d' data.txt
+
+Note: n is a number
+
+# delete data from 5th line to 15th line
+sed -i '5, 15d' data.txt
+
+# print data from line number 10 to 20
+sed -n '10,20p' data.txt
+
+# insert data at 2nd line
+sed '2i\i love india' data.txt
+
+# insert data at last line
+sed '$a\i am from ashokit' data.txt
+
+=================
+User Management
+=================
+
+=> Linux is a multi user based OS
+
+=> Multiple users can acces single linux machine and can perform multi tasking at time.
+
+Note: "ec2-user" is a default user in amazon linux vm. ec2-user having sudo priviliges.
+
+=> Within one linux machine we can create multiple user accounts
+
+=> when we create user account, for user one home directory will be created.
+
+		ec2-user => /home/ec2-user
+
+		john => /home/john
+
+		smith => /home/smith
+
+# create user
+sudo useradd <uname>
+
+# set password for user & update pwd for user
+sudo passwd <uname>		
+
+# display all users created
+cat /etc/passwd
+
+# swith user account
+su <uname>
+
+# navigate to current user home directory
+cd ~
+
+# Delete user
+$ sudo userdel <uname>
+
+# Delete user along with user home directory
+$ sudo userdel <uname> --remove
+
+# how to change username
+$ sudo usermod -l <new-name> <old-name>
+
+
+
+/etc/passwd: Contains general user information.
+/etc/shadow: Contains hashed passwords and other security-related information.
+
+===================================
+Working with user groups in linux
+===================================
+
+=> When we create user in linux, for every user one user group also will be created with the given username.
+
+# Display all groups in linux
+$ cat /etc/group
+
+# Create group in linux
+$ sudo groupadd <group-name>
+
+# Adding user to group
+$ sudo usermod -aG <group-name> <username>
+
+# Remove user from the group
+$ sudo gpasswd -d <username> <group-name>
+
+# display users belongs to a group
+$ sudo lid -g <group-name>
+
+# display user belongs to which groups
+$ id <username>
+
+# delete group
+$ sudo groupdel <group-name>
+
+# changing group name
+$ sudo groupmod -n <new-name> <old-name>
+
+
+=======================================================================================
+Assignment : create new user and connect with linux vm using newly created user account
+=======================================================================================
+
+###############
+12-July-2024
+###############
+
+=> In linux, to enable password based authentication we need to modify below 2 files
+
+		1) sudoers
+		2) sshd_config
+
+=================================
+What is sudoers file in Linux
+=================================
+
+=> It is very important configuration file in linux machine.
+
+=> Using this file we can control which user can run command as a superuser.
+
+# print sudoersfile content
+$ sudo cat /etc/sudeors
+
+Note: We should be very careful while working with sudoers file. If we do any mistakes in sudoers file then system will be crashed.
+
+
+########## Giving sudo previliges for user #######
+
+# open sudoers file
+$ sudo visudo
+
+# Add below line
+<username> ALL=(ALL:ALL) ALL
+
+=> After making changes to close sudoers file =>  ( CTRL + X + Y + Enter)
+
+========================================================
+How to enable password based authentication for users ?
+========================================================
+
+=> In linux vm, by default passwordauthentication is no
+
+=> If we want to connect with linux vm using username and password then we need to set that value as yes.
+
+=> WE WLL MODIFY THIS IN "sshd_config" file.
+
+# Display sshd_configurration file data
+$ sudo cat /etc/ssh/sshd_config
+
+# Open file
+$ sudo vi /etc/ssh/sshd_config
+
+Note: Go to insert mode and enable pwdbasedauthentication as yes
+
+# restart sshd service
+# sudo systemctl restart sshd
+
+Note : Now we can connect with linux vm using username and pwd
+
+$ ssh username@public-ip
+
+==========================
+File Permissions in Linux
+==========================
+
+=> Using file permissions we can secure our files and we can protect our file data.
+
+=> We have 3 types of permissions in linux
+
+		r => read
+
+		w => write
+
+		x => execute
+
+=> file/directory permissions will be represented like below
+
+		rwxrwxrwx f1.txt
+
+=> file permissions contains in 9 characters
+
+		first 3 characters => user/owner permissions
+
+		middle 3 characters => group permissions
+
+		last 3 characters => others permissions
+
+
+		r--r-xr--  f2.txt
+
+			user : read
+			group : read + execute
+			others : read
+
+		r-xrw--w-  f3.txt		
+
+			user: read + execute
+			group: read + write
+			others : write
+
+=> To change file/directory permissions we will use 'chmod'	command
+
+			+ => add 
+
+			- => remove
+
+# Giving execute permission for user
+$ chmod u+x f1.txt
+
+# giving write permission for group
+$ chmod g+w f1.txt
+
+# Remove execute permission for others
+$ chmod o-x f1.txt
+
+# Removeall permissions for others
+$ chmod o-rwx f1.txt
+
+# give all permissions for group
+$ chmod g+rwx f1.txt			
+
+====================================
+File Permissions in Numeric Format
+====================================
+
+0 => no permissions
+
+1 => Execute
+
+2 => Write
+
+3 => (2+1) => Write + Execute
+
+4 => Read
+
+5 => (4 + 1) => Read + Execute
+
+6 => (4+2) => Read + Write
+
+7 => (6+1) => Read + Write + Execute
+
+
+# ugo+x
+$ chmod 111 f1.txt
+
+# ugo+w
+$ chmod 222 f1.txt
+
+# u+rwx, g+rw o+rx
+$ chmod 765 f1.txt
+
+# u+r, g+rx, o+rw
+$ chmod 456 f1.txt
+
+# u+rwx, g+rwx, o+rwx
+$ chmod 777 f1.txt
+
+# u-rwx, g-rwx, o+rwx
+$ chmod 7 f1.txt
+
+
+###############
+15-July-2024
+###############
+
+===============
+chown command
+===============
+
+=> It is used to change file/directory ownership
+
+# change owner
+sudo chown new-owner file/directory
+
+# change owner-group
+sudo chown :new-group file/directory
+
+# change owner & group of file/directory
+sudo chown new-owner:new-group file/directory
+
+============================================
+Q) What is the diff between chmod & chown ?
+============================================
+
+chmod => To change file/directory permissions
+
+chown => To change owner/group
+
+=============================================
+How to find the location of files in linux?
+=============================================
+
+=> in linux we can use 'find' command to search file paths.
+
+# search for the files which are having name as f1.txt
+sudo find /home -name f1.txt
+
+# search for empty files inside /home
+sudo find /home -type f -empty
+
+# search for empty directories inside /home
+sudo find /home -type d -empty
+
+# print 30 days old files in linux vm
+sudo find /home -mtime 30 -print
+
+# print 1 day old files in linux vm
+sudo find /home -mtime 1 -print
+
+# delete 30 days old files in linux vm
+sudo find /home -mtime 30 -delete
+
+
+=================================
+Working with Zip files in linux
+=================================
+
+=> Zip is used for files archieve (compress)
+
+## syntax to create zip file : $ zip <zip-file-name> <content>
+
+# create some empty files
+touch f1.txt f2.txt f3.txt
+
+# create zip file with content
+zip ashokit_data *.txt
+
+# unzip the zip file
+unzip ashokit_data.zip
+
+======================
+Networking commands
+======================
+
+ping : To check connectivity
+		ping 192.168.23.321
+
+wget : It is used to download files from internet
+		wget <url>		
+
+curl : It is used to send HTTP request to server
+
+		curl https://type.fit/api/quotes
+
+ifconfig : To get ip address of the machine
+
+###############################################################################
+							Date : 16-July-2024
+###############################################################################
+
+==========================
+Package Managers in Linux
+==========================
+
+=> package means a software
+
+	Ex: git, maven, java, python etc...
+
+=> Package Managers are used to install / update / manage software packages in linux machines.
+
+=> Package managers are specific to linux distribution.
+
+	amazon linux / Red Hat Linux / Cent OS : yum
+
+	ubuntu / debian : apt
+
+
+# check git client installed or not
+git -version
+
+# install git client s/w
+sudo yum install git
+
+# check git installation path
+whereis git
+
+# check java version
+java -version
+
+# check java path
+whereis java
+
+# install java
+sudo yum install java
+
+======================================================
+Assignment : Remove git and java from linux machine
+======================================================
+
+=============================
+Webserver Setup in Linux VM
+============================
+
+=> Webserver is a software which is used to run websites.
+
+=> Website means collection of web pages
+
+	ex: login page, register page, dashboard page, about us page ....
+
+=> Websites are divided into 2 types
+
+		1) Static website
+		2) Dynamic website
+
+=> The website which gives same response for every user is called as static website.
+
+=> The website which gives response based on logged in user is called as dynamic website.
+
+=> To run static websites we can use 'httpd' as webserver.
+
+=> To run dynamic websites we can use 'tomcat, iis' as webservers.
+
+
+# install httpd webserver
+sudo yum install httpd -y
+
+# check webserver status
+sudo service httpd status
+
+# start httpd server
+sudo service httpd start
+
+Note: httpd webserver runs on http protocol with 80 port number.
+
+Note: To access our webserver we need to enable http protocol in ec2 vm security group inbound rules.
+
+=> Once http protocol enabled we can access our webserver using ec2-linux-vm public ip
+
+# navigate to website content directory
+cd /var/www/html
+
+# create a file with a name : index.html and write the content
+sudo vi index.html
+
+
+================================
+Static website hostig in linux
+================================
+
+# install webserver
+$ sudo yum install httpd
+
+# start webserver
+$ sudo service httpd start
+
+# Navigate to website content directory
+$ cd /var/www/html
+
+# create index.html file with website content
+$ sudo vi index.html
+
+
+Note: httpd webserver runs on 80 port number.
+
+=> To access our webserver we need to enable 80 port number in security group inbound rules.
+
+=> We can access our webserver using ec2-vm public ip.
+
+
+================================
+What is systemctl in linux ?
+================================
+
+=> systemctl is used to manage services in linux machines.
+
+=> using systemctl we can perform below operations
+
+	a) start a service
+	b) stop a service
+	c) restart a service
+	d) enable/disable service
+
+# stop httpd server
+sudo systemctl stop httpd
+
+# start httpd server
+sudo systemctl start httpd
+
+# reload service
+sudo systemctl reload http
+
+====================================================
+
+uptime : from when our linux vm is running
+
+free : to display memory details
+
+top : display running processes
+
+htop : display running process in table format
+
+Q) How to check linux os version ?
+Ans) cat /etc/os-release
+
+Q) How to check linux kernel version ?
+Ans) uname -r
+
+
+###############################################################################
+					Date : 18-July-2024
+###############################################################################
+
+===========================
+Working with Link Files
+===========================
+
+=> In linux we can create link files ( similar to shorcut files in windows )
+
+=> We have 2 types of link files in linux
+
+	1) Hard link
+	2) Soft link (symbolic link)
+
+--------------------------------
+Syntax To create Hard Link
+--------------------------------
+
+$ ln <orginal-file> <link-file>
+
+$ touch f1.txt
+
+# create link file
+$ ln f1.txt f100.txt
+
+Note: f100.txt is link file for f1.txt
+
+# print files along with inode numbers
+# ls -li
+
+Note: If we write some data to original file, it is reflecting in link file also.
+
+Note: when we delete original file, link file is not effected (hard link).
+
+
+------------------------------
+Syntax To create Soft Link 
+------------------------------
+
+$ ln -s <orginal-file> <soft-link-file>
+
+Ex:
+
+$ touch s1.txt
+
+$ ln -s s1.txt s100.txt
+
+$ ls -li
+
+Note: Original file and link file having diff inode numbes
+
+$ cat >> s1.txt
+
+Note: Original file data reflecting in link file also.
+
+$ rm s1.txt
+
+Note: When we remove original file then soft link file will become dangling file. 
+     We can't access that file.
+
+
+=====================
+process management
+=====================
+
+Process management in Linux involves controlling and monitoring the execution of programs (processes) on the system. 
+
+# display processing running
+$ ps aux
+
+Note: Every process will process id (PID)
+
+$ kill PID
+
+# terminate process immediatley (forcefully)
+$ kill -9 PID
+
+=============================================
+How to change hostname in vm (temporarly) ?
+=============================================
+
+# set hostname
+$ sudo hostname <new-name>
+
+# re-start session 
+$ exit 
+
+Note: connect back to vm then we can see configured hostname
+
+===================================
+How to set hostname permanentley
+===================================
+
+# update hostname in below file
+$ sudo vi /etc/hostname
+
+# restart the vm
+
+Note: After restart hostname configured in file will be reflected in terminal.
+
+
+=========
+Summary
+=========
+
+1) What is Linux OS
+2) Windows Vs Linux
+3) Linux VM Setup in AWS cloud
+4) Connecting with Linux VM using SSH client
+5) Directories & Files Based Operations
+6) Text Editors
+7) Text filters
+8) User & Group Management
+9) File Permissions
+10) File Ownership
+11) Archieves
+12) Networking
+13) suderos file
+14) sshd_config
+15) package managers
+16) static website hosting (httpd)
+17) Service Management (systemctl)
+18) Process management
+19) Working with link files
+20) Changing Hostname
+
+

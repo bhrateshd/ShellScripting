@@ -1,0 +1,23 @@
+=========
+Summary
+=========
+1) What is Linux OS
+2) Windows Vs Linux
+3) Linux VM Setup in AWS cloud
+4) Connecting with Linux VM using SSH client
+5) Directories & Files Based Operations
+6) Text Editors
+7) Text filters
+8) User & Group Management
+9) File Permissions
+10) File Ownership
+11) Archieves
+12) Networking
+13) suderos file
+14) sshd_config
+15) package managers
+16) static website hosting (httpd)
+17) Service Management (systemctl)
+18) Process management
+19) Working with link files
+20) Changing Hostname
