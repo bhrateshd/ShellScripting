@@ -85,11 +85,4 @@ Contributions are welcome! To contribute:
    ```
 5. Open a pull request.
 
-## License
-This repository is licensed under the MIT License. See the `LICENSE` file for more details.
-
----
-
 Feel free to explore, learn, and contribute to this repository. Happy scripting!
-
-
