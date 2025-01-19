@@ -1,0 +1,22 @@
+Writing Your First Shell Script
+
+Getting Started with scripting
+
+A script is a series of commands axecuted sequentially. Heres a simple example that prints a message to the screen:
+	
+	#!/bin/bash # Shebang to specify the interpreter
+	echo "Hello World!"
+ 
+	Output:
+	Hello World
+	
+ How to Run Your Script:
+ 
+ Make it Executable:
+	chmod +x script.sh
+ 
+ Execute the Script:
+	./script.sh
+ 
+ Why,Shebang (#!/bin/bash) Matters
+ This line tells the system to use Bash to run the script, ensuring compatibility across Linux environments
