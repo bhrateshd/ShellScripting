@@ -1,0 +1,53 @@
+📈 Conditional Statements in Shell Scripting
+
+if Statement:
+
+	if [ $a -gt $b ]; then
+	
+		echo "a is greater than b"
+
+	fi
+	
+	
+if-else Statement:
+
+	if [ $a -gt $b ]; then
+	
+		echo "a is greater than b"
+		
+	else
+	
+		echo "a is not greater than b"
+	
+	fi
+	
+
+elif (else if) Statement:
+
+	if [ $ -gt $b ]: then
+	
+		echo "a is greater than b"
+	
+	elif [ $a -eq $b ]; then
+	
+		echo "a is equal to b"
+		
+	else
+	
+		echo "a is less than b"
+		
+	fi
+	
+	
+Case Statement:
+	case $a in
+	
+		a) echo "a is 1" ;;
+		b) echo "a is 2" ;;
+		*) echo "a is neither 1 nor 2" ;;
+		
+	esac
+	
+Key Notes:
+	Alwaysputspaces around operators in conditions.
+	elif and else are optional but useful for handling multiple conditions
