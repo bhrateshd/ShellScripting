@@ -16,4 +16,3 @@ case $choice in
 	*) echo "your input is not matching any case"
 		;;
 esac
-#Bhai ne bola krne ka to krne ka
