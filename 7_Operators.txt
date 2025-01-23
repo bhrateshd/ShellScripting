@@ -1,0 +1,72 @@
+
+Comparison Operators
+
+	Equal to: -eq or == :checks if two values are equal.
+	[ $a -eq $b ]
+	
+	Greater Than or Equal to: -ge:Checks if the left operand is greater than or equal to the right.
+	[ $a -ge $b ]
+	
+	Less Than or Equal to: -le: Checks if the left operand is less than or equal to right.
+	[ $a -le $b ]
+	
+	Not Equal to: -ne or !=:Checks if the two values are not equal.
+	[ $a -ne $b ]
+	
+	Greater Than: -gt: Checks if the left operand is greater than ghe right.
+	[ $a -gt $b ]
+	
+	Less Than: -lt: Checks if the legft operand is less than the right.
+	[ $a -lt $b ]
+	
+
+Logical Operators
+
+	Using && (AND) Operator:
+	
+	a=10
+	b=5
+	if [ $a -gt 5 ] && [ $b -lt 10 ]; then
+		echo "Both conditions are true"
+	else
+		echo "One or both conditions are false"
+	fi
+	
+	
+	Using || (OR) Operator
+	
+	a=10
+	b=15
+	if [ $a -gt 5 ] || [ $b -lt 10 ]; then
+		echo "At least one condition is true"
+	else
+		echo "Neither condition is true"
+	fi
+	
+	
+	Combining && and || Operators:
+	
+	a=10
+	b=5
+	c=15
+	
+	if [$a -gt 5 ] && [ $b -lt 10 ] || [ $c -eq 15 ]; then
+		echo "Condition met"
+	else
+		echo "Condition not met"
+	fi
+	
+Explanation:
+	The&&ensuresbothconditions must be true.
+	The||checksthesecondcondition if the first fails.
+	
+	
+	Ternary Operator (One-liner If-Else)
+	
+	A simple way to write an if-else statement in one line:
+		a=10
+		[ $a-gt 5 ] && echo "Greater" || echo "Not Greater"
+
+Explanation:
+	If $a -gt 5 is true,it prints "Greater".
+	Otherwise, it prints "Not Greater".

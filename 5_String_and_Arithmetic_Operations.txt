@@ -1,0 +1,84 @@
+String and Arithmetic Operations
+
+String Manipulation Examples:
+	str="Shell Scripting"
+
+Length:
+	echo ${#str}  Output: 15
+	
+Replace:
+	echo ${str/Scripting/Programming}  Output: Scripting Programming
+	
+Extract Substring:
+	echo ${str:6:9}  Output: Scripting
+
+Get the length of a string:
+	myVar="Hello World!"
+	length=${#myVar}
+	echo $length  Output: 12
+	
+Convert to uppercase:
+	upper=${myVar^^}
+	echo $upper  Output: HELLO WORLD!
+
+Convert to lowercase:
+	lower=${myVar,,}
+	echo =$lower  Output:  hello Buddy!
+	
+Replace a substring:
+	replace=${myVar/World/Buddy}
+	echo $replace  Output:  Hello Buddy!
+	
+Extract a substring(slice)
+	slice=${myVar:6:5}
+	echo $slice  Output:  World
+	
+	
+	
+USER INTERACTION
+Taking input from the User in ShellScripting
+
+Basic Input:
+	read var_name
+	echo "You entered: $var_name"
+	
+	Example Output:
+	(User types "John")
+	You entered: John
+	
+Input with Prompt:
+	read -p "Your name: " NAME
+	echo "Helow, $NAME!"
+	
+	Example Output:
+	(Your name: User types "John")
+	Your name: JohnHeloo, John!
+	
+Key Difference:
+	Basic Input: Takes input without a prompt.
+	Input with Prompt:Displays a prompt to guide the user.
+
+
+Arithmetic Operation
+	Usingthe let command:
+	Increment:
+		let a++
+	This increments the value of a by 1.
+
+Assignment with multiplication:
+		let a=5*10
+	echo $a Output: 50
+	
+Using(( ))forarithmetic operations:
+		Increment:
+			((a++))
+		Assignment with multiplication:
+			((a=5*10))
+			echo $a Output: 50
+ 
+Key Difference:
+	let is more traditional, while (( )) is more modern and allows for more complex arithmetic expressions.
+
+	Use $((expression)) for complex calculations:
+	echo $((5 * (3 + 2))) Output: 25
+
