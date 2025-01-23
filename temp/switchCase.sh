@@ -17,5 +17,3 @@ case $choice in
 		;;
 esac
 #Bhai ne bola krne ka to krne ka
-#Another Push
-
