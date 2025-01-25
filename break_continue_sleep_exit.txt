@@ -1,0 +1,66 @@
+1. break Statement
+	● Purpose: Exits a loop prematurely.
+	● Syntax: break or break n(exits the loop and can exit multiple nested loops with n)
+
+	Example:
+		for i in {1..5}; do
+			if [ $i-eq 3 ]; then break; fi
+			echo $i
+		done
+		
+		● Output: Loops until i=3, then exits
+		
+2. continue Statement
+	● Purpose: Skips the current loop iteration and moves to the next one.
+	● Syntax: continue or continue n (skips current iteration in nested loops).
+ 
+	Example:
+		for i in {1..5}; do
+			if [ $i-eq 3 ]; then continue; fi
+			echo $i
+		done
+		
+		● Output: Skips iteration when i=3.
+		
+3. break and continue in Nested Loops
+	● break: break ncanexit multiple levels of nested loops.
+	● continue: continue n skips the current iteration in multiple nested loops.
+ 
+	Example:
+		for i in {1..3}; do
+			for j in {1..3}; do
+				if [ $i-eq 2 ] && [ $j-eq 2 ]; then break 2; fi
+				echo "i=$i, j=$j"
+			done
+		done
+ 
+		● Output: Exits both loops when i=2 and j=2.
+		
+		
+4. sleep Command
+	● Purpose: Pauses the script for a specified time.
+	● Syntax: sleep <duration>
+
+	Example:
+		sleep 5 # Pauses for 5 seconds
+		
+5. exit Command
+	● Purpose: Exits a script with a status code (0 for success, non-zero for error).
+	● Syntax: exit <exit_code
+	
+	Example:
+		exit 1 # Exits with an error status
+		
+6. $? (Exit Status of Last Command)
+	● Purpose: Stores the exit status of the last executed command.
+	
+	Example:
+		mkdir myfolder
+		echo $?   # Returns 0 if successful, 1 if failed
+		
+Summary
+	● break: Exit loops.
+	● continue: Skips an iteration in loops.
+	● sleep: Pauses script execution.
+	● exit: Terminates a script with a status code.
+	● $?:Checks the exit status of the last command.

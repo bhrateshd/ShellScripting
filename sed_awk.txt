@@ -1,0 +1,15 @@
+seq command
+
+	sed is a stream editor. Basically it is editor for stream of data, coming from either a file or a 
+pipe or the keyboard. It is capable of processing lines from the file. The lines to be processed 
+can be 'addressed' using line-numbers or specifying some string to be found in the line. What 
+processing needs to be done on that line is specified by the commands defined by sed.  
+
+One thing to be remembered is, when sed operates on a file, it operates on the stream of data 
+coming from the file. It does not change the contents of the original file unless asked it to do so 
+explicitly. 
+
+Another thing to remember is, sed operates on whole line. So it is not much useful if you wish 
+to cut the line in various sections and process each section separately. For such a need you will 
+need to use 'awk'. In some ways, sed can be seen as less capable than awk, but to understand 
+awk better, sed must be understood first. 
