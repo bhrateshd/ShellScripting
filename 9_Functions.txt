@@ -1,0 +1,140 @@
+🔄Functions
+	Functions is a reusable block of code that can perform a specific task. It helps in organizing code, avoiding repetition, and making scripts more modular and easier to maintain.
+	
+	1. Defining Functions:
+		You can define a function using either of these two syntaxes:
+		function function_name { ... }
+		or
+		function_name() { ... }
+		
+	2. Basic Function:
+		Functions are used to encapsulate reusable blocks of code.
+		greet() {
+			echo "Hello, welcome to the shell script!"
+		}
+		greet # Calling the function
+		
+	3. Functions with Parameters:
+		Functions can accept arguments, which are accessed via $1, $2, etc.
+		greet_user() {
+			echo "Hello, $1!"
+		}
+		greet_user "Adhyansh"
+		
+	4. Return Values:
+		Functions return values via echo, and the output can be captured.
+		add_numbers() {
+			result=$(( $1 + $2 ))
+			echo $result
+		}
+		sum=$(add_numbers 3 5)
+		echo "The sum is: $sum"
+		
+	5. Conditional Logic and Loops:
+		Functions can include conditions and loops.
+		check_even() {
+		if (( $1 % 2 == 0 )); then
+			echo "$1 is even"
+		else
+			echo "$1 is odd"
+		fi
+		}
+		check_even 7 output: "7 is odd"
+		
+	6. Recursion:
+		Functions can call themselves recursively.
+		factorial() {
+		if [ $1-le 1 ]; then
+			echo 1
+		else
+			prev=$(factorial $(( $1- 1 )))
+			echo $(( $1 * prev ))
+		fi
+		}
+		result=$(factorial 5)
+		echo "Factorial of 5 is: $result"
+		
+	
+	7. Default Values:
+		Set default values for arguments using ${1:-default_value}.
+		greet() {
+		local name=${1:-Guest}
+		echo "Hello, $name!"
+		}
+		greet "Adhyansh" Output: "Hello, Adhyansh!"
+		greet Output: "Hello, Guest!"
+		
+	8. Passing Arguments by Reference:
+		Bash doesn't directly support passing by reference but can simulate it using
+ eval.
+		modify_value() {
+			eval $1=\$2
+		}
+		modify_value var 100
+		echo "The value of var is now: $var" Output: "The
+		value of var is now: 100"
+		
+	9. Argument Passing:
+		You can pass arguments to functions, and they can be accessed inside the
+ function.
+			■ Positional Arguments: $1, $2, $3, etc. (Access individual
+ arguments).
+			■ All Arguments: $@ (all arguments as separate words), $* (all
+ arguments as a single string).
+			■ ArgumentCount: $# (number of arguments passed).
+			
+		1. Positional Arguments ($1, $2, $3, etc.)
+			● These represent individual arguments passed to a function or script.
+			● $1 is the first argument, $2 is the second, and so on.
+			
+		Example:
+			greet() {
+			echo "Hello, $1! You are $2 years old."
+			}
+			greet "Adhyansh" 25
+			Output: Hello, Adhyansh! You are 25 years old.
+			
+		2. All Arguments ($@)
+			● This represents all the arguments passed to a function or script.
+			● Eachargument is treated as a separate word, which is especially useful
+ when looping over the arguments.
+		Example:
+			print_all() {
+				for arg in "$@"; do
+					echo "$arg"
+				done
+			}
+			print_all "Apple" "Banana" "Cherry"
+			Output:
+				Apple
+				Banana
+				Cherry
+				
+		3. All Arguments as a Single String ($*)
+			● Similar to $@, but it treats all arguments as a single string, meaning spaces
+ between arguments may be lost.
+		Example:
+			print_all_as_string() {
+				echo "$*"
+			}
+			print_all_as_string "Apple" "Banana" "Cherry"
+			Output: Apple Banana Cherry
+			
+		4. Number of Arguments ($#)
+			● This gives the count of the arguments passed to a function or script.
+		Example:
+			count_args() {
+				echo "Number of arguments: $#"
+			}
+			count_args "Apple" "Banana" "Cherry"
+			Output: Number of arguments: 3
+			
+			
+	Summary
+		● Functions in shell scripts help organize code, making it modular and
+ reusable.
+		● Arguments can be passed to functions, accessed via $1, $2, etc., and
+ default values can be set.
+		● Youcanuseloops and conditionals inside functions to add logic.
+		● Functions return values using echo, which can be captured in variables.
+
