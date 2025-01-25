@@ -1,0 +1,73 @@
+🔄shift Operator in Bash
+
+	The shift command in Bash allows you to move (shift) the positional parameters
+ (arguments) passed to a script or function. Here's a brief explanation of how it
+ works:
+ 
+	Syntax:
+		● shift:Shifts positional parameters left by one position.
+		● shift n:Shifts positional parameters left by n positions.
+		
+	Example 1: Shifting Arguments (One Position)
+		shift_example() {
+			echo "Original arguments: $1, $2, $3"
+			shift
+			echo "After shift: $1, $2, $3"
+		}
+		shift_example "one" "two" "three"
+ 
+		Output:
+		Original arguments: one, two, three
+		After shift: two, three
+		After the shift, $1 becomes "two", and $2 becomes "three".
+		
+	
+	Example 2: Shifting Arguments Multiple Times
+		shift_multiple() {
+			echo "Original arguments: $1, $2, $3, $4"
+			shift 2
+			echo "After shifting 2 times: $1, $2"
+		}
+		shift_multiple "apple" "banana" "cherry" "date"
+		
+		Output:
+		Original arguments: apple, banana, cherry, date
+		After shifting 2 times: cherry, date
+		After shifting 2 positions, "apple" and "banana" are discarded, and the remaining arguments are shifted left
+		
+	 Example 3: Using shift with a Loop
+ process_args() {
+ while [ "$#"-gt 0 ]; do
+ echo "Processing argument: $1"
+ shift
+ done
+ }
+ process_args "arg1" "arg2" "arg3" "arg4"
+ Output:
+ Processing argument: arg1
+ Processing argument: arg2
+ Processing argument: arg3
+ Processing argument: arg4
+ The loop processes each argument one by one by shifting the arguments left until
+ there are no more arguments ($# becomes 0).
+ Example 4: Combining shift with $# to Count Remaining Arguments
+ process_first_two() {
+ echo "First argument: $1"
+ echo "Second argument: $2"
+ shift 2
+ echo "Remaining arguments: $@"
+ }
+ process_first_two "apple" "banana" "cherry" "date"
+Output:
+ First argument: apple
+ Second argument: banana
+ Remaining arguments: cherry date
+ After shifting by 2, the first two arguments are removed, and the remaining
+ arguments are accessible using $@.
+ Key Points:
+ ● shiftremovesthe first argument ($1) and shifts the remaining arguments
+ left.
+ ● Youcanshift by multiple positions using shift n.
+ ● The$#variable always reflects the remaining number of arguments.
+ ● Theshiftcommandisuseful in loops for processing a variable number of
+ arguments
